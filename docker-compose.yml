@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  profile_app_front:
+    container_name: profile_app_front
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./profile_app_front
+        target: /usr/src/profile_app_front
+    command: sh -c "cd profile_app_front && yarn start"
+    ports:
+      - 3000:3000
+    stdin_open: true
