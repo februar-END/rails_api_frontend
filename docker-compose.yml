@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - type: bind
-        source: ./profile_app_front
+        source: ./app
         target: /usr/src/profile_app_front
     command: sh -c "cd profile_app_front && yarn start"
     ports:
